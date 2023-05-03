@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json.schemastore.org/chrome-manifest",
+    "manifest_version": 3,
+    "name": "Intertask Integration Tools",
+    "version": "0.1.0",
+    "background": {
+        "service_worker": "service-worker.js"
+    }
+}
