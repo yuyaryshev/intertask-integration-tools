@@ -4,15 +4,8 @@
 
 /// <reference types="@types/chrome" />
 
-const port = chrome.runtime.connect();
-
-window.addEventListener("message", (event) => {
-  if (event.source !== window) {
-    return;
-  }
-
-  if (event.data.type && (event.data.type === "IIT_TOGGLE")) {
-    console.log("Toggle IIT on tab with id: " + event.data.tabId);
-    port.postMessage(event.data);
-  }
-}, false);
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.type === 'IIF_TOGGLE') {
+        console.log('Toggle tab with id: ' + sender.id);
+    }
+})
