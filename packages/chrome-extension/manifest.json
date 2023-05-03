@@ -4,6 +4,17 @@
     "name": "Intertask Integration Tools",
     "version": "0.1.0",
     "background": {
-        "service_worker": "service-worker.js"
-    }
+        "service_worker": "service-worker.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.atlassian.net/jira/software/*"],
+            "css": ["styles/action-button.css"],
+            "js": [
+                "scripts/action-button.js",
+                "scripts/jira-plugin.js"
+            ]
+        }
+    ]
 }

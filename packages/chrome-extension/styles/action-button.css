@@ -1,0 +1,18 @@
+.action-button {
+    padding: 1em 0.5em;
+    background-color: mediumslateblue;
+    border: none;
+    border-radius: 0.125em;
+}
+    .action-button__wrapper {
+        position: absolute;
+        top: 4em;
+        left: calc(100% - 4em);
+    }
+    .action-button__status-text {
+        content-visibility: hidden;
+    }
+    .action-button:hover .action-button__status-text {
+        content-visibility: visible;
+    }
+    
