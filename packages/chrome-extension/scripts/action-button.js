@@ -19,17 +19,6 @@ document.body.append(wrapper);
 actionButton.addEventListener('click', toggleIITForCurrentTab)
 
 async function toggleIITForCurrentTab() {
-    const currentTab = await getCurrentTab()
-
-    window.postMessage({
-        type: "IIT_TOGGLE",
-        tabId: currentTab.id,
-    }, "*")
-
+    chrome.runtime.sendMessage({ type: "IIT_TOGGLE" });
     actionButton.classList.toggle('iit__button_on');
-}
-
-async function getCurrentTab() {
-    const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
-    return tab;
 }

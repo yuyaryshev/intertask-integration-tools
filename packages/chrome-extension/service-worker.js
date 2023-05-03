@@ -4,12 +4,8 @@
 
 /// <reference types="@types/chrome" />
 
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.contextMenus.create({
-        id: 'sampleContextMenu',
-        title: 'Sample Context Menu',
-        contexts: [
-            'selection',
-        ]
-    })
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.type === 'IIF_TOGGLE') {
+        console.log('Toggle tab with id: ' + sender.id);
+    }
 })
