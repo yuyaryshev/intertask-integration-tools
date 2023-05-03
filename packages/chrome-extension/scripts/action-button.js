@@ -5,16 +5,16 @@
 /// <reference types="@types/chrome" />
 
 const actionButton = document.createElement('button');
-const wrapper = document.createElement('div');
+const container = document.createElement('div');
 const statusText = document.createElement('p');
 
 actionButton.classList.add('iit__button', 'iit__button_on');
-wrapper.classList.add('iit__wrapper');
+container.classList.add('iit__container');
 statusText.classList.add('iit__status-text');
 
 actionButton.append(document.createTextNode('IIT'));
-wrapper.append(actionButton, statusText);
-document.body.append(wrapper);
+container.append(actionButton, statusText);
+document.body.append(container);
 
 actionButton.addEventListener('click', toggleIITForCurrentTab)
 
