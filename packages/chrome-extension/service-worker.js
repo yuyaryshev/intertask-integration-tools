@@ -4,12 +4,15 @@
 
 /// <reference types="@types/chrome" />
 
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.contextMenus.create({
-        id: 'sampleContextMenu',
-        title: 'Sample Context Menu',
-        contexts: [
-            'selection',
-        ]
-    })
-})
+const port = chrome.runtime.connect();
+
+window.addEventListener("message", (event) => {
+  if (event.source !== window) {
+    return;
+  }
+
+  if (event.data.type && (event.data.type === "IIT_TOGGLE")) {
+    console.log("Toggle IIT on tab with id: " + event.data.tabId);
+    port.postMessage(event.data);
+  }
+}, false);
