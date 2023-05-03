@@ -6,13 +6,13 @@
 }
     .action-button__wrapper {
         position: absolute;
-        top: 4em;
-        left: calc(100% - 4em);
+        top: 6em;
+        left: calc(100% - 3em);
     }
     .action-button__status-text {
         content-visibility: hidden;
     }
-    .action-button:hover .action-button__status-text {
+    .action-button:hover + .action-button__status-text {
         content-visibility: visible;
     }
     
