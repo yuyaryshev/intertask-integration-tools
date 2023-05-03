@@ -5,8 +5,6 @@ import { router as logRouter } from './log.js';
 
 export const router = Router();
 
-router.use(json())
-
 router.use('/config', configRouter);
 router.use('/data', dataRouter);
 router.use('/log', logRouter);
