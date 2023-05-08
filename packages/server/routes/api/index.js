@@ -1,4 +1,4 @@
-import { Router, json } from 'express';
+import { Router } from 'express';
 import { router as configRouter } from './config.js';
 import { router as dataRouter } from './data.js';
 import { router as logRouter } from './log.js';

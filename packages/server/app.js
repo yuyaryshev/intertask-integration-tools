@@ -3,9 +3,10 @@
 import process from 'node:process';
 import express from 'express';
 import cors from 'cors';
-import session from 'express-session';
-import { config } from './config/index.js';
+import dotenv from 'dotenv';
 import { router as appRouter } from './routes/index.js'
+
+dotenv.config()
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,14 +14,6 @@ const app = express();
 
 app.use(cors())
 app.use(express.json());
-app.use(session({
-    secret: config.secret,
-    cookie: {
-        maxAge: 60000,
-    },
-    resave: false,
-    saveUninitialized: false,
-}))
 
 app.use('/', appRouter);
 
