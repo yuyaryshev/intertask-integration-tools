@@ -16,6 +16,7 @@
 }
 
 .iit__container {
+    z-index: 1000;
     position: absolute;
     top: 5em;
     left: calc(100% - 4em);
