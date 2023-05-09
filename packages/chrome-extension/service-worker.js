@@ -1,51 +1,23 @@
 'use strict';
 
-/**
- * @typedef IITMessage
- * @type {Object}
- * @prop {'IIT_TOGGLE'|'IIT_DATA'|'IIT_EXECUTE'} type
- * @prop {any} value
- */
-
 // @ts-check
 
 /// <reference types="@types/chrome" />
 
 const actions = {
     /**
-     * @param {IITMessage} message
-     * @param {chrome.runtime.MessageSender} sender
+     * @param {unknown} data 
      */
-    IIT_TOGGLE: (message, sender) => {
-        console.log('Toggle tab with id: ' + sender.tab?.id);
-    },
-    /**
-     * @param {IITMessage} message
-     * @param {chrome.runtime.MessageSender} sender
-     */
-    IIT_DATA: (message, sender) => {
-        console.dir(message.value)
-    },
-    /**
-     * @param {IITMessage} message
-     * @param {chrome.runtime.MessageSender} sender
-     */
-    IIT_EXECUTE: (message, sender) => {
-        chrome.scripting.executeScript({
-            target: { tabId: sender.tab?.id || 0 },
-            files: ['test.js']
-        })
+    IIT_DATA(data) {
+        console.dir(data)
     }
 }
 
 /**
- * 
- * @param {IITMessage} message 
- * @param {chrome.runtime.MessageSender} sender 
- * @param {(response?: any) => void} sendResponse 
+ * @param {{ type: keyof typeof actions, payload?: unknown}} message 
  */
-const messageHandler = (message, sender, sendResponse) => {
-    actions[message.type](message, sender)
+const messageHandler = (message ) => {
+    actions[message.type](message.payload)
 }
 
 chrome.runtime.onMessage.addListener(messageHandler)
