@@ -3,11 +3,10 @@
     "name": "Intertask Integration Tools",
     "version": "0.1.0",
     "background": {
-        "scripts": ["./service-worker.js"],
-        "persistent": true
+        "scripts": ["background.js"],
+        "persistent": false
     },
     "permissions": [
-            "declarativeWebRequest",
         "activeTab",
         "alarms",
         "background",

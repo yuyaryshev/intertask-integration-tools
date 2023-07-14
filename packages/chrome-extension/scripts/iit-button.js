@@ -19,6 +19,15 @@ document.body.append(container);
 actionButton.addEventListener('click', toggleIITForCurrentTab)
 
 async function toggleIITForCurrentTab() {
-    chrome.runtime.sendMessage({ type: "IIT_TOGGLE" });
+
+
+    chrome.runtime.sendMessage({ type: "IIT_TOGGLE", ydata:124235, url: document.documentURI });
+    console.log({tag:'CURRENT_DEBUG_iit_button'});
+    console.log({tag:'CURRENT_DEBUG_fn'});
+    const fn = new Function('a', "return a+3");
+    console.log(fn(8));
+    console.log({tag:'CURRENT_DEBUG_fn_END'});
+
+
     actionButton.classList.toggle('iit__button_on');
 }

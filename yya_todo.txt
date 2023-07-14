@@ -1,0 +1,118 @@
+MVP Задачи:
+    Прикрутить typescript
+        Скопировать из mindfull_youtube_chrome_extension - например
+
+    service-worker
+        swRequest({reqData}){resData}
+            Отправляет сообщение в страницу
+            Получает ответ от страницы
+
+            ? По идее это сильно похоже на yhttp_api но только тут это будет транспорт для общения с вкладками в режиме запрос-ответ...
+    Реализовать процесс в порядке следования процесса
+
+MVP Процесс:
+    На yyaethernet
+        service-worker
+            exchange.setInput()
+                Отправляет сообщение в exchange страницу
+
+                exchangeSetInput() - на странице
+                    Записывает input письмо.
+
+
+    service-worker
+        checkExchange() - проверяет что
+            - Exchange страница доступна
+            - Что в ней есть canary
+            Как это работает:
+                Отправляем getStatus сообщение
+                Проверяем что ответ получен на 200мс
+
+        getInput()
+            Отправляет сообщение в exchange страницу
+
+            exchangeGetInput - на странице RSM
+                Читает input письмо
+                Отправляет результат в service worker
+
+        output.rsm.visions = readRsm()
+            Отправляет сообщение в Rsm страницу
+            rsmGetVisions() - на странице RSM
+                Считывает вижены из Rsm и отдает их
+
+        output.status = {
+            rsm: {lastOnline}
+            outlook: {lastOnline}
+        }
+
+        setOutput()
+            Отправляет сообщение в exchange страницу
+
+            exchangeSetInput() - на странице
+                Записывает данные в output письмо.
+
+    На yyaethernet
+        service-worker
+            exchange.getOutput()
+                Отправляет сообщение в exchange страницу
+
+                exchangeGetOutput() - на странице
+                    Читает output письмо.
+
+            sendToNode()
+                Отправляет данные в NodeJs по axios/http - aDataApi
+
+        Node Js
+            implementApi(aDataApi)
+                Сохраняет полученные данные в json файл
+                Вызывает gatherReportData
+
+                Обновляет файл report.html
+
+            Публикует report.html по http
+
+            ? Проверяет базовую авторизацию?
+R&D
+    Outlook
+        - Чтение встреч
+        - Чтение новых писем из папки Входящее
+    Alfa People
+        - Получение информации по ФИО
+        - Получение информации по Login
+    RSM
+        - Поиск объектов по названию
+        - ? Экспорт всех объектов?
+
+
+
+- Cov-mode
+    - Без сервера, только service-worker.js и почта
+    - Получать скрипты парсинга из письма на почте.
+    - Получать интервал парсинга из письма на почте.
+    - Получать регулярность опроса оттуда же, - раз в Х секунд
+    - Отправлять данные в письмо на почте.
+
+- Covert процесс:
+    1. КАК??? Понять что я в cov-mode? Настройка в плагине? Как такую сделать?
+        https://stackoverflow.com/questions/28277312/chrome-extensions-saving-settings
+            chrome.storage.sync.set({ mytext: txtValue });
+            chrome.storage.sync.get('mytext', function(data) {
+                yourTextArea.value = data.mytext;
+            });
+    2. Все вкладки получают сообщение {type:"IIT_START_SCRAP", "resourseName":"rsm"}
+    3. Каждая вкладка проверяет, соответствует ли она resourceName, если да, то продолжаем...
+    4. Исполняем соответствующий код скрапинга
+    5. Отправляем сообщение {type:"IIT_SCRAP_DATA", "resourceName":"Запрошенный ResourceName", "data":"<JSON_DATA>", "url": "..."}
+    6. После получения данных service-worker.js должен вызвать {type:"IIT_SAVE_SCRAP_DATA", "resourceName":"Запрошенный ResourceName", "data":"<JSON_DATA>", "url": "..."}
+    7. Вкладка которая работает с Outlook должна отработать сохранение данных
+
+- На серваке сделать чтобы он получал URL и отдавал скрипт скрапинга
+    - А еще интервал следующего обращения к серверу
+
+
+
+В будущем:
+ - Скрапинг писем из почты
+ - Скрапинг задач Jira - взять код из issue_loader'а
+ - Автопостинг ссылки на РСМ в Jira
+
