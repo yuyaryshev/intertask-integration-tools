@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6b8fe80-e270-4786-8356-d3be406fde1d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/helpers/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/manifest_VER2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/manifest_VER3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/popup/popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/popup/popup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/popup/popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/scripts/iit-button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/scripts/outlook-plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/chrome-extension/styles/iit-button.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/config/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/routes/api/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/routes/api/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/routes/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/routes/api/log.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/server/routes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yya_todo.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2SNqjAkoOh0CjBGbvhXYCeiq6xh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/b/Mine/GIT_Work/intertask-integration-tools&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\b\Mine\GIT_Work\intertask-integration-tools" />
+      <recent name="D:\b\Mine\GIT_Work\intertask-integration-tools\packages\chrome-extension" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
