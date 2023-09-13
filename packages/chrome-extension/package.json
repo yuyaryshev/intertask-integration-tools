@@ -1,8 +1,0 @@
-{
-  "name": "chrome-extension",
-  "version": "1.0.0",
-  "author": "paveda",
-  "devDependencies": {
-    "@types/chrome": "^0.0.235"
-  }
-}
